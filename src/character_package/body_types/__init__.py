@@ -1,1 +1,0 @@
-from .file_subclass import warrior, mage, medic
