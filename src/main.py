@@ -2,7 +2,8 @@
 import os
 import random
 import json
-
+from tiers import gen_tier
+from tabulate import tabulate
 
 
 src_dir = os.path.dirname(__file__)                                             # importing resource in file
@@ -40,17 +41,21 @@ class DefaultChar():                                                # creating d
     sub_stats = None
     class_gears = None
     
+    tier_name , tier_bonus = gen_tier()
+    
     def __init__(self):
         self.name = random.choice(NAMES)
-        self.core_stat = self.gen_core_stat()
+        self.core_stat = self.gen_core_stat(self.tier_bonus, self.tier_name)
         self.sub_stat = self.gen_sub_stat()
         self.gear = self.gen_gear()
     
 
-    def gen_core_stat(self):
+    def gen_core_stat(self, tier_bonus, tier_name):
         core_result = {}
         for each in self.core_stats:
-            core_result[each] = random.randint(self.min_stat , self.max_stat)
+            gen_int = random.randint(self.min_stat , self.max_stat)
+            core_result[each] = gen_int + tier_bonus
+        print("This" , tier_bonus , tier_name)
         return core_result
     
     def gen_sub_stat(self):
@@ -72,7 +77,7 @@ class Melee(DefaultChar):
     
     min_stat = 10
     max_stat = 35
-    
+    tier_name , tier_bonus = gen_tier()
     sub_stats = ["Armor", "Crit Chance"]
     class_gears = GEARS["Melee"]
 
@@ -116,12 +121,14 @@ def show():
     
     for each in range(3):
         char = random.choice(types)()
+        # print(char)
         
         print("--" * 20)
         
         print(f"Name > {char.name}")
         print(f"Class > {char.type}")
-        
+        print(f"Tier > {char.tier_name}")
+        print(f"{char.tier_bonus}")
         print("--" * 5)
         
         for key, value in char.core_stat.items():
@@ -131,11 +138,10 @@ def show():
             print(f"{key} > {value}")
             
         print(f"Gear > {char.gear}")
-        
+
     print("--" * 20)
-
-
-
+    return char.tier_bonus , char.tier_name
 
 if __name__ == "__main__":
-    show()
+    tier_bonus , tier_name = show()
+    # print(f"{tier_bonus}, {tier_name}")
