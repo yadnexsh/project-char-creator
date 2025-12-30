@@ -37,34 +37,36 @@ class DefaultChar():                                                # creating d
     type = "Villager"
     min_stat = 5
     max_stat = 30
-    core_stats = ["Power", "Health", "Speed"]
+    list_of_stats = ["Power", "Health", "Speed"]                   
     sub_stats = None
     class_gears = None
     
-    tier_name , tier_bonus = gen_tier()
+    # tier_name , tier_bonus = gen_tier()
     
     def __init__(self):
         self.name = random.choice(NAMES)
-        self.core_stat = self.gen_core_stat(self.tier_bonus, self.tier_name)
+        self.tier_name , self.tier_bonus = gen_tier()
+        self.core_stats = self.gen_core_stat()
         self.sub_stat = self.gen_sub_stat()
         self.gear = self.gen_gear()
-    
+        
 
-    def gen_core_stat(self, tier_bonus, tier_name):
-        core_result = {}
-        for each in self.core_stats:
+    def gen_core_stat(self):
+        core_stats = {}
+        for each in self.list_of_stats:
             gen_int = random.randint(self.min_stat , self.max_stat)
-            core_result[each] = gen_int + tier_bonus
-        print("This" , tier_bonus , tier_name)
-        return core_result
+            core_stats[each] = gen_int + self.tier_bonus
+        return core_stats
     
     def gen_sub_stat(self):
         sub_result = {}
+        
         if self.sub_stats == None:
             pass 
         else:
             for each in self.sub_stats:
                 sub_result[each] = random.randint(self.min_stat , self.max_stat)
+                
         return sub_result
     
     def gen_gear(self):
@@ -77,13 +79,22 @@ class Melee(DefaultChar):
     
     min_stat = 10
     max_stat = 35
-    tier_name , tier_bonus = gen_tier()
+    # tier_name , tier_bonus = gen_tier()
     sub_stats = ["Armor", "Crit Chance"]
     class_gears = GEARS["Melee"]
 
     def __init__(self):
         super().__init__()
         self.type = self.__class__.__name__
+        
+        tier_name , tier_bonus = gen_tier()
+        
+        for each in self.core_stats:
+            new_value = self.core_stats[each] + tier_bonus
+            self.core_stats[each] = new_value
+
+            
+            
         
         
 class Magic(DefaultChar):
@@ -98,6 +109,13 @@ class Magic(DefaultChar):
         super().__init__()
         self.type = self.__class__.__name__
         
+        tier_name , tier_bonus = gen_tier()
+        
+        for each in self.core_stats:
+            new_value = self.core_stats[each] + tier_bonus
+            self.core_stats[each] = new_value
+
+            
 
 class Agile(DefaultChar):
     
@@ -110,7 +128,14 @@ class Agile(DefaultChar):
     def __init__(self):
         super().__init__()
         self.type = self.__class__.__name__
+        
+        tier_name , tier_bonus = gen_tier()
+        
+        for each in self.core_stats:
+            new_value = self.core_stats[each] + tier_bonus
+            self.core_stats[each] = new_value
 
+            
     
 def show():
     
@@ -128,16 +153,16 @@ def show():
         print(f"Name > {char.name}")
         print(f"Class > {char.type}")
         print(f"Tier > {char.tier_name}")
-        print(f"{char.tier_bonus}")
+        print(f"Gear > {char.gear}")
         print("--" * 5)
         
-        for key, value in char.core_stat.items():
+        for key, value in char.core_stats.items():
             print(f"{key} > {value}")
             
         for key, value in char.sub_stat.items():
             print(f"{key} > {value}")
             
-        print(f"Gear > {char.gear}")
+        
 
     print("--" * 20)
     return char.tier_bonus , char.tier_name
