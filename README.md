@@ -8,7 +8,7 @@
 ## Features
 
 
-**Character Generation**
+##### Character Generation
 - Generates 3 random characters every time the program runs
 - Each character is completely independent and unique
 - Assigns a random class:
@@ -18,34 +18,35 @@
     * Agile
 
 
-
-**Class System**
+##### Class System
 - Each character is assigned a **random class**
 - Class determines:
   - Base stat ranges
   - Sub-stats
   - Available weapons
 
+Classes
+- Melee: Armor, Crit Chance
+- Agile: Evasion , Attack Speed
+- Magic: Mana , Spell Crit
 
-**Weapon Assignment**
+
+##### Weapon Assignment
 - Every character receives a class-based weapon
 - Weapon selection is randomized each time
 - Weapon quality changes based on rarity
 
 
-**Stats**
+##### Stats
 * Core Stats (All Characters)
     * Power
     * Health
     * Speed
     * Sub Stats
 
-Melee: Armor, Crit Chance
-Agile: Evasion , Attack Speed
-Magic: Mana , Spell Crit
 
 
-**Rarity System**
+##### Rarity System
 * Rarity is generated per character
 * Rarity provides:
     * Stat bonuses
