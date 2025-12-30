@@ -1,9 +1,13 @@
-### Random Character Generator
-A Python-based character generation system that creates three unique characters per run, each with randomized classes, weapons, stats, and rarity-based variations.
+![Project Header](https://capsule-render.vercel.app/api?type=blur&height=300&color=gradient&text=Random%20Character%20Generator&section=header&textBg=false&fontSize=50&animation=fadeIn)
+
+
+<p align="center"> A Python-based character generation system that creates three unique characters per run, each with randomized classes, weapons, stats, and rarity-based variations.
 
 
 
+## Features
 ---
+
 **Character Generation**
 
 - Generates 3 random characters every time the program runs
@@ -13,7 +17,6 @@ A Python-based character generation system that creates three unique characters 
     * Melee
     * Magic
     * Agile
----
 
 **Class System**
 
@@ -23,14 +26,12 @@ A Python-based character generation system that creates three unique characters 
   - Sub-stats
   - Available weapons
 
----
 **Weapon Assignment**
 
 - Every character receives a class-based weapon
 - Weapon selection is randomized each time
 - Weapon quality changes based on rarity
 
----
 **Stats**
 
 * Core Stats (All Characters)
@@ -43,7 +44,6 @@ Melee: Armor, Crit Chance
 Agile: Evasion , Attack Speed
 Magic: Mana , Spell Crit
 
----
 **Rarity System**
 
 * Rarity is generated per character
@@ -51,13 +51,15 @@ Magic: Mana , Spell Crit
     * Stat bonuses
     * Better gear outcomes
 
+## Data Sources
 ---
-**Data Sources**
+
 * names.json → character names
 * gears.json → class-based weapons
 * tiers.py → rarity generation logic
 
-**How to run** - Pending
+## How to Run
+---
 ```
-python main.py
+python src\main.py
 ```
