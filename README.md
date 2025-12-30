@@ -41,7 +41,9 @@
     * Sub Stats
 
 Melee: Armor, Crit Chance
+
 Agile: Evasion , Attack Speed
+
 Magic: Mana , Spell Crit
 
 
@@ -71,6 +73,21 @@ Crit Chance: 14
 * names.json : character names
 * gears.json : class-based weapons
 * tiers.py : rarity generation logic
+
+
+## Project Structure
+
+```
+src/
+ ├─ main.py
+ ├─ class_data/
+ │  ├─ file_mainbody.py
+ │  ├─ file_subclasses.py
+ │  └─ file_tiers.py
+ └─ character_data/
+    ├─ names.json
+    └─ gears.json
+```
 
 ## Installation
 ```
