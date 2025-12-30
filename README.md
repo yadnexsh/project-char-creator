@@ -6,7 +6,7 @@
 
 
 ## Features
----
+
 
 **Character Generation**
 
@@ -52,14 +52,14 @@ Magic: Mana , Spell Crit
     * Better gear outcomes
 
 ## Data Sources
----
+
 
 * names.json → character names
 * gears.json → class-based weapons
 * tiers.py → rarity generation logic
 
 ## How to Run
----
+
 ```
 python src\main.py
 ```
