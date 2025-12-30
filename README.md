@@ -51,14 +51,45 @@ Magic: Mana , Spell Crit
     * Stat bonuses
     * Better gear outcomes
 
+## Example Output
+
+```python
+Name: Arven  
+Class: Melee  
+Tier: Epic  
+Weapon: Greatsword  
+
+Power: 48  
+Health: 62  
+Speed: 31  
+Armor: 22  
+Crit Chance: 14
+```
+
 ## Data Sources
 
-* names.json → character names
-* gears.json → class-based weapons
-* tiers.py → rarity generation logic
+* names.json : character names
+* gears.json : class-based weapons
+* tiers.py : rarity generation logic
+
+## Installation
+```
+git clone https://github.com/yadnexsh/project-char-creator.git
+pip install -r requirements.txt
+```
 
 ## How to Run
 
 ```
 python src\main.py
 ```
+
+## Future Improvements
+
+- Weapon stat modifiers
+- ReRoll single character
+- Character comparison tool
+
+## License
+
+MIT
