@@ -41,9 +41,7 @@
     * Sub Stats
 
 Melee: Armor, Crit Chance
-
 Agile: Evasion , Attack Speed
-
 Magic: Mana , Spell Crit
 
 
