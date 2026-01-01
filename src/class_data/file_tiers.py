@@ -6,6 +6,8 @@
 import random
 import os
 
+# Below base class , just creates range fun with default 0 values at start | Framework class
+
 class Base():
     
     min_range = 0
@@ -14,7 +16,9 @@ class Base():
     def gen_range(self):
         tier_range = random.randint(self.min_range , self.max_range)
         return tier_range
-    
+
+# Below classes are actual rarities/tiers of the character.
+
 class Common(Base):
     min_range = 5
     max_range = 10
@@ -32,6 +36,7 @@ class Legendry(Base):
     max_range = 40
     
 
+# This func. is choosing one tier for char , its based on percentage aka rarity.
 
 def gen_tier():
     roll = random.randint(1, 100)
@@ -53,7 +58,7 @@ def gen_tier():
 #----------------------------------------
 
 def load():
-    print(os.path.basename(__file__), "> Loaded sucessfully")
+    print(os.path.basename(__file__), "> Loaded successfully")
 
 #----------------------------------------
 

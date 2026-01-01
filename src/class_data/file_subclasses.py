@@ -43,6 +43,13 @@ class Villager(CharMainBody):
     secondary_stats = None
     class_gears_pool = None
 
+    def gen_primary_stats(self):
+        
+        if self.char_tier_name in ["Legendry", "Epic"]:
+            self.char_tier_bonus = 0
+            
+        return super().gen_primary_stats()
+
     def __init__(self):
         super().__init__()
         self.char_class = self.__class__.__name__
@@ -89,7 +96,7 @@ class Agile(CharMainBody):
 #----------------------------------------
 
 def load():
-    print(os.path.basename(__file__), "> Loaded sucessfully")
+    print(os.path.basename(__file__), "> Loaded successfully")
 
 #----------------------------------------
 if __name__ == "__main__":
