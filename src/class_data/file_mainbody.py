@@ -85,7 +85,7 @@ class CharMainBody():
         """
         
         primary_stats = {}
-        
+
         for each in self.primary_stats_pool:
             
             random_integer = random.randint(self.class_stat_min , self.class_stat_max)
@@ -135,11 +135,10 @@ class CharMainBody():
             
             return random.choice(self.class_gears_pool)
 
-
 #------------------------------------------------------
 
 def load():
-    print(os.path.basename(__file__), "> Loaded sucessfully")
+    print(os.path.basename(__file__), "> Loaded successfully")
 
 #--------------------------------------------------------
     
