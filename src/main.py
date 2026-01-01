@@ -1,11 +1,6 @@
 import random
-
 from class_data import SUBCLASSES, LOADER
 
-"""
-SUBCLASSES = The list of all classes 
-LOADER = Creates log / for debug
-"""
 
 divider = "--" * 20
 
@@ -13,8 +8,8 @@ def create_char():
     
     """
     Docstring for create_char
-    In this func we are just creating character with instancing class method , in this func the count of char is getting controlled by instance_count
-    Rest of the things are automated.
+    Give code generates a character with instancing class method  class , where Name tier and the stats , gear related to class are getting auto assigned to char.
+    The count of character you want to generate is getting controlled by instance_count , by default it's 3.
     """
     
     instance_count = 3
@@ -38,7 +33,8 @@ def create_char():
         
         print(divider)
         
-# create_char()
+
+#---------------------------------------------
 
 if __name__ == "__main__":
     
