@@ -3,7 +3,7 @@
 
 <p align="center"> A Python-based character generation system that creates three unique characters per run, each with randomized classes, weapons, stats, and rarity-based variations.
 
-
+---
 
 ## Features
 
@@ -12,7 +12,7 @@
 - Generates 3 random characters every time the program runs
 - Each character is completely independent and unique
 - Assigns a random class:
-    * Villager (Default)
+    * Villager 
     * Melee
     * Magic
     * Agile
@@ -34,20 +34,19 @@ Classes
 ##### Weapon Assignment
 - Every character receives a class-based weapon
 - Weapon selection is randomized each time
-- Weapon quality changes based on rarity
-
 
 ##### Stats
 * Core Stats (All Characters)
     * Power
     * Health
     * Speed
-    * Sub Stats
+    * Sub Stats [ Except villager ]
 
 
 
 ##### Rarity System
-* Rarity is generated per character
+* Rarity is generated per character.
+* There are 4 tiers : Common , Rare , Epic , Legendary 
 * Rarity provides:
     * Stat bonuses
     * Better gear outcomes
@@ -96,6 +95,8 @@ pip install -r requirements.txt
 
 ## How to Run
 
+1) Open the downloaded repo in your IDE.
+2) Type the given cmd in terminal
 ```
 python src\main.py
 ```
