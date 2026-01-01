@@ -1,0 +1,17 @@
+
+
+
+Program generates 3 random characters at a time - done
+
+Each character is assigned a random class - done
+
+Every character has 3 core stats (randomized within limits) - done
+
+
+Character rarity tiers (Common, Rare, Epic, Legendary) affecting stat ranges [optional]
+    - 1 Based on rarity stats will change
+    - 2 based on rarity weapons will change
+    - 3 in Legendary random god roll - maybe or we should add god roll in normal too ? [ just luck roll kinda ]
+
+Certain classes grant extra class-specific stats [optional]
+    Example: Knight class receives an additional Speed stat done
