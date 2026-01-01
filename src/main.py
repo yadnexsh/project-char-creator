@@ -8,7 +8,7 @@ def create_char():
     
     """
     Docstring for create_char
-    Give code generates a character with instancing class method  class , where Name tier and the stats , gear related to class are getting auto assigned to char.
+    Given code generates a character with instancing class method  class , where Name tier and the stats , gear related to class are getting auto assigned to char.
     The count of character you want to generate is getting controlled by instance_count , by default it's 3.
     """
     
