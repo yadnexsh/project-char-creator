@@ -32,8 +32,8 @@ class Legendry(Base):
     max_range = 40
     
 
-
-def gen_tier():
+def rarity():
+    
     roll = random.randint(1, 100)
 
     if roll <= 3:
@@ -53,11 +53,11 @@ def gen_tier():
 #----------------------------------------
 
 def load():
-    print(os.path.basename(__file__), "> Loaded sucessfully")
+    print(os.path.basename(__file__), "> Loaded successfully")
 
 #----------------------------------------
 
 if __name__ == "__main__":
-    bonus, tier_name = gen_tier()
+    bonus, tier_name = rarity()
     print(f"{bonus} > {tier_name}")
     
