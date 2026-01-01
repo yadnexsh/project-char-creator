@@ -1,44 +1,15 @@
 
 import os
-import json
-from .file_mainbody import CharMainBody
+from .char_base import CharBase
 
-# Importing Names and Gears from json files
+from config import load_config_data
+GEARS , NAMES, state = load_config_data()
 
-src_dir = os.path.dirname(os.path.dirname(__file__))
-character_data_dir = os.path.join(src_dir, "character_data")
-
-gear_json_file = os.path.join(character_data_dir , "gears.json")
-name_json_file = os.path.join(character_data_dir , "names.json")
-
-try:
-    
-    with open(gear_json_file, "r") as file:
-        GEARS = json.load(file)
-        
-except json.decoder.JSONDecodeError as e:
-    print(f"{e}")
-    
-except Exception as e:
-    print(f"{e}")
-    
-try:
-    
-    with open(name_json_file, "r") as file:
-        NAMES = json.load(file)
-        
-except json.decoder.JSONDecodeError as e:
-    print(f"{e}")
-    
-except Exception as e:
-    print(f"{e}")
-    
-    
     
 #------------------------------------------------------
 
 
-class Villager(CharMainBody):
+class Villager(CharBase):
         
     secondary_stats = None
     class_gears_pool = None
@@ -48,7 +19,7 @@ class Villager(CharMainBody):
         self.char_class = self.__class__.__name__
         
 
-class Melee(CharMainBody):
+class Melee(CharBase):
     
     class_stat_min = 10
     class_stat_max = 35
@@ -60,7 +31,7 @@ class Melee(CharMainBody):
         self.char_class = self.__class__.__name__
         
         
-class Magic(CharMainBody):
+class Magic(CharBase):
     
     class_stat_min = 20
     class_stat_max = 45
@@ -74,7 +45,7 @@ class Magic(CharMainBody):
         
 
 
-class Agile(CharMainBody):
+class Agile(CharBase):
     
     class_stat_min = 30
     class_stat_max = 55
@@ -89,10 +60,10 @@ class Agile(CharMainBody):
 #----------------------------------------
 
 def load():
-    print(os.path.basename(__file__), "> Loaded sucessfully")
+    print(os.path.basename(__file__), "> Loaded successfully")
 
 #----------------------------------------
 if __name__ == "__main__":
     
-    from file_mainbody import load
+    from config import load
     load()

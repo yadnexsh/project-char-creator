@@ -1,11 +1,24 @@
 import random
-from class_data import SUBCLASSES, LOADER
+import sys
+import os
 
+cur_file_path = os.path.abspath(__file__)
+print(cur_file_path)
+# 
+package_path = os.path.abspath(cur_file_path + "/../../src/")
+print(package_path)
+
+if package_path not in sys.path:
+    sys.path.insert(0, package_path)
+
+from gen_char.modules import ALL_CHARACTERS
 
 divider = "--" * 20
 
+# ----------------------------------------
+
+
 def create_char():
-    
     """
     Docstring for create_char
     Given code generates a character with instancing class method  class , where Name tier and the stats , gear related to class are getting auto assigned to char.
@@ -18,12 +31,12 @@ def create_char():
     
     for each in range(instance_count):
         
-        character = random.choice(SUBCLASSES)()
+        character = random.choice(ALL_CHARACTERS)()
         
-        print(f"Name > {character.char_name}")
+        print(f"Name > {character.name}")
         print(f"Class > {character.char_class}")
-        print(f"Tier > {character.char_tier_name}")
-        print(f"Gear > {character.char_gear}")
+        print(f"Tier > {character.tier_name}")
+        print(f"Gear > {character.gear}")
         
         for key, value in character.primary_stats.items():
             print(f"{key} > {value}")
@@ -37,11 +50,4 @@ def create_char():
 #---------------------------------------------
 
 if __name__ == "__main__":
-    
-    print(divider)
-    
-    for each in LOADER:
-        
-        instance = each()
-        
     create_char()
