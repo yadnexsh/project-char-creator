@@ -4,7 +4,7 @@
 
 
 import random
-
+import os
 
 class Base():
     
@@ -50,7 +50,12 @@ def gen_tier():
 
     return chosen_tier.__name__, bonus
 
+#----------------------------------------
 
+def load():
+    print(os.path.basename(__file__), "> Loaded sucessfully")
+
+#----------------------------------------
 
 if __name__ == "__main__":
     bonus, tier_name = gen_tier()
