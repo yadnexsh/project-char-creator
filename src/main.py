@@ -1,13 +1,21 @@
 import random
+
 from class_data import SUBCLASSES, LOADER
 
-# print(len(SUBCLASSES))
-# print(SUBCLASSES)
-# print(random.choice(SUBCLASSES))
+"""
+SUBCLASSES = The list of all classes 
+LOADER = Creates log / for debug
+"""
 
 divider = "--" * 20
 
 def create_char():
+    
+    """
+    Docstring for create_char
+    In this func we are just creating character with instancing class method , in this func the count of char is getting controlled by instance_count
+    Rest of the things are automated.
+    """
     
     instance_count = 3
     
