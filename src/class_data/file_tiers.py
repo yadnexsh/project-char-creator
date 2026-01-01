@@ -8,6 +8,10 @@ import os
 
 class Base():
     
+    """
+    Docstring for Base
+    Very basic with no changes in incoming from char class values.
+    """
     min_range = 0
     max_range = 0
     
@@ -15,6 +19,8 @@ class Base():
         tier_range = random.randint(self.min_range , self.max_range)
         return tier_range
     
+# Below classes are the rarities for character , where as the rarity gets increased stats are getting increased
+
 class Common(Base):
     min_range = 5
     max_range = 10
@@ -33,7 +39,15 @@ class Legendry(Base):
     
 
 
+
+
 def gen_tier():
+    
+    """
+    Docstring for gen_tier
+    This func. generates on rarity / tier for the character, based on the values the tier name gets selected.
+    """
+    
     roll = random.randint(1, 100)
 
     if roll <= 3:

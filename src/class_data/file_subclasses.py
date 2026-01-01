@@ -39,7 +39,12 @@ except Exception as e:
 
 
 class Villager(CharMainBody):
-        
+    
+    """
+    Docstring for Villager
+    Villager is a very basic class with no sub stats nor any weapons.
+    """
+    
     secondary_stats = None
     class_gears_pool = None
 
@@ -49,6 +54,11 @@ class Villager(CharMainBody):
         
 
 class Melee(CharMainBody):
+    
+    """
+    Docstring for Melee
+    Melee is class with sub stats & weapons with some changes in stats.
+    """
     
     class_stat_min = 10
     class_stat_max = 35
@@ -62,6 +72,11 @@ class Melee(CharMainBody):
         
 class Magic(CharMainBody):
     
+    """
+    Docstring for Magic
+    Magic is class with sub stats & weapons with some changes in stats.
+    
+    """
     class_stat_min = 20
     class_stat_max = 45
     
@@ -75,6 +90,12 @@ class Magic(CharMainBody):
 
 
 class Agile(CharMainBody):
+    
+    
+    """
+    Docstring for Agile
+    Agile is class with sub stats & weapons with some changes in stats.
+    """
     
     class_stat_min = 30
     class_stat_max = 55
