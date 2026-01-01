@@ -3,10 +3,7 @@ import sys
 import os
 
 cur_file_path = os.path.abspath(__file__)
-print(cur_file_path)
-# 
 package_path = os.path.abspath(cur_file_path + "/../../src/")
-print(package_path)
 
 if package_path not in sys.path:
     sys.path.insert(0, package_path)

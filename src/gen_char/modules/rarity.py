@@ -6,7 +6,7 @@
 import random
 import os
 
-class Base():
+class RarityBase():
     
     min_range = 0
     max_range = 0
@@ -15,19 +15,19 @@ class Base():
         tier_range = random.randint(self.min_range , self.max_range)
         return tier_range
     
-class Common(Base):
+class Common(RarityBase):
     min_range = 5
     max_range = 10
     
-class Rare(Base):
+class Rare(RarityBase):
     min_range = 10
     max_range = 20
     
-class Epic(Base):
+class Epic(RarityBase):
     min_range = 20
     max_range = 30
     
-class Legendry(Base):
+class Legendry(RarityBase):
     min_range = 30
     max_range = 40
     
