@@ -1,13 +1,16 @@
 import random
 from class_data import SUBCLASSES, LOADER
 
-# print(len(SUBCLASSES))
-# print(SUBCLASSES)
-# print(random.choice(SUBCLASSES))
 
 divider = "--" * 20
 
 def create_char():
+    
+    """
+    Docstring for create_char
+    Give code generates a character with instancing class method  class , where Name tier and the stats , gear related to class are getting auto assigned to char.
+    The count of character you want to generate is getting controlled by instance_count , by default it's 3.
+    """
     
     instance_count = 3
     
@@ -30,7 +33,8 @@ def create_char():
         
         print(divider)
         
-# create_char()
+
+#---------------------------------------------
 
 if __name__ == "__main__":
     
