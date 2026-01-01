@@ -36,9 +36,8 @@ class Legendry(Base):
     max_range = 40
     
 
-# This func. is choosing one tier for char , its based on percentage aka rarity.
-
-def gen_tier():
+def rarity():
+    
     roll = random.randint(1, 100)
 
     if roll <= 3:
@@ -63,6 +62,6 @@ def load():
 #----------------------------------------
 
 if __name__ == "__main__":
-    bonus, tier_name = gen_tier()
+    bonus, tier_name = rarity()
     print(f"{bonus} > {tier_name}")
     
