@@ -3,13 +3,8 @@ import os
 import random
 import sys
 
-cur_file_path = os.path.abspath(__file__)
-package_path = os.path.abspath(cur_file_path + "/../..")
 
-if package_path not in sys.path:
-    sys.path.insert(0, package_path)
-    
-from config import load_config_data
+from gen_char.config import load_config_data        # sub package knows the parent folder
 GEARS , NAMES, state = load_config_data()
 
 from .rarity import rarity

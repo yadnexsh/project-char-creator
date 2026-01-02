@@ -2,7 +2,7 @@
 import os
 from .char_base import CharBase
 
-from config import load_config_data
+from gen_char.config import load_config_data
 GEARS , NAMES, state = load_config_data()
 
     
