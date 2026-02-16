@@ -9,10 +9,12 @@ if package_path not in sys.path:
     sys.path.insert(0, package_path)
 
 from gen_char.modules import ALL_CHARACTERS
+from gen_char.modules.rarity.rarity_tiers import rarity
 
 divider = "--" * 20
 
 # ----------------------------------------
+
 
 
 def create_char():
@@ -29,13 +31,21 @@ def create_char():
     for each in range(instance_count):
         
         character = random.choice(ALL_CHARACTERS)()
+        tier , bonus = rarity()
+
+        while character.char_class == "Villager" and tier in ("Epic", "Legendry") :
+            tier , bonus = rarity()
         
+        
+
         print(f"Name > {character.name}")
         print(f"Class > {character.char_class}")
-        print(f"Tier > {character.tier_name}")
+        print(f"Tier > {tier}")
+        
         print(f"Gear > {character.gear}")
         
         for key, value in character.primary_stats.items():
+            value = value + bonus
             print(f"{key} > {value}")
             
         for key, value in character.secondary_stats.items():
@@ -43,6 +53,8 @@ def create_char():
         
         print(divider)
         
+
+
 
 #---------------------------------------------
 
