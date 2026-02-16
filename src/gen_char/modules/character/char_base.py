@@ -7,7 +7,8 @@ import sys
 from gen_char.config import load_config_data        # sub package knows the parent folder
 GEARS , NAMES, state = load_config_data()
 
-from .rarity import rarity
+# from .rarity import rarity
+
 
 #------------------------------------------------------
 
@@ -33,7 +34,7 @@ class CharBase():
         """
         
         self.name = random.choice(NAMES)
-        self.tier_name , self.tier_bonus = rarity()
+        # self.tier_name , self.tier_bonus = rarity()
         self.primary_stats = self.gen_primary_stats()
         self.secondary_stats = self.gen_secondary_stats()
         self.gear = self.gen_gear()
@@ -50,7 +51,7 @@ class CharBase():
     
         for each in self.primary_stats_pool:
             random_integer = random.randint(self.class_stat_min , self.class_stat_max)
-            primary_stats[each] = random_integer + self.tier_bonus
+            primary_stats[each] = random_integer 
             
         return primary_stats
     
@@ -97,5 +98,5 @@ def load():
 #--------------------------------------------------------
     
 if __name__ == "__main__":
-    from rarity import load
+    from gen_char.modules.rarity_tiers import load
     load()
