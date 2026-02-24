@@ -90,7 +90,6 @@ src/
 ## Installation
 ```
 git clone https://github.com/yadnexsh/project-char-creator.git
-pip install -r requirements.txt
 ```
 
 ## How to Run
